@@ -1,0 +1,48 @@
+{
+  "featured": [
+    {
+      "title": "E-commerce Platform",
+      "tech": "React • Next.js • Stripe",
+      "description": "Full-stack e-commerce solution with payment integration",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop",
+      "link": "#",
+      "category": "fullstack"
+    },
+    {
+      "title": "Task Management App",
+      "tech": "React • Firebase • Material-UI",
+      "description": "Collaborative project management tool",
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop",
+      "link": "#",
+      "category": "frontend"
+    },
+    {
+      "title": "Data Visualization Dashboard",
+      "tech": "React • D3.js • Python",
+      "description": "Interactive analytics dashboard for business metrics",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop",
+      "link": "#",
+      "category": "data"
+    }
+  ],
+  "personal": [
+    {
+      "title": "Portfolio Website",
+      "tech": "React • TypeScript • Vite",
+      "description": "Personal portfolio website with modern design",
+      "image": "https://images.unsplash.com/photo-1467232004584-a241de8b6ef3?w=300&h=200&fit=crop",
+      "link": "#",
+      "category": "frontend"
+    }
+  ],
+  "openSource": [
+    {
+      "title": "React Component Library",
+      "tech": "React • TypeScript • Storybook",
+      "description": "Reusable component library for React applications",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=200&fit=crop",
+      "link": "#",
+      "category": "frontend"
+    }
+  ]
+}
