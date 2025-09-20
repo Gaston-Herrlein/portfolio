@@ -3,6 +3,7 @@ import { Mail, Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
 import { styles } from "../style/module";
 import skillsData from "../const/skill.json";
 import projectsData from "../const/projects.json";
+import blogPostsData from "../const/blogPosts.json";
 
 const PortfolioWebsite = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -24,24 +25,6 @@ const PortfolioWebsite = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const blogPosts = [
-    {
-      title: "Building Scalable React Applications",
-      date: "Mar 15, 2024",
-      excerpt: "Best practices for structuring large React codebases",
-    },
-    {
-      title: "The Future of Web Development",
-      date: "Mar 8, 2024",
-      excerpt: "Exploring emerging trends and technologies",
-    },
-    {
-      title: "Performance Optimization Techniques",
-      date: "Feb 28, 2024",
-      excerpt: "Tips to make your web apps lightning fast",
-    },
-  ];
 
   return (
     <>
@@ -201,7 +184,7 @@ const PortfolioWebsite = () => {
         <section className="section" id="blog">
           <h2 className="section-title">Latest Posts</h2>
           <div className="blog-list">
-            {blogPosts.map((post, index) => (
+            {blogPostsData.map((post, index) => (
               <div key={index} className="blog-item">
                 <div className="blog-content">
                   <h3 className="blog-title">{post.title}</h3>
