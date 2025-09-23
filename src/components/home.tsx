@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Mail, Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
+import Header from "./header";
 import { styles } from "../style/module";
 import skillsData from "../const/skill.json";
 import projectsData from "../const/projects.json";
@@ -29,34 +30,7 @@ const PortfolioWebsite = () => {
   return (
     <>
       <style>{styles}</style>
-      <header className="site-header">
-        <div className="brand">Alex Rivera</div>
-        <nav className="site-nav">
-          <a
-            href="#about"
-            className={`nav-link ${activeSection === "about" ? "active" : ""}`}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className={`nav-link ${
-              activeSection === "projects" ? "active" : ""
-            }`}
-          >
-            Projects
-          </a>
-          <a
-            href="#blog"
-            className={`nav-link ${activeSection === "blog" ? "active" : ""}`}
-          >
-            Blog
-          </a>
-          <a className="cta-btn" href="#contact">
-            Contact
-          </a>
-        </nav>
-      </header>
+      <Header activeSection={activeSection} />
 
       <main>
         <section className="hero" id="home">
