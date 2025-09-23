@@ -90,7 +90,7 @@ export const styles = `
   
   .hero {
     display: grid;
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 460px;
     gap: 48px;
     align-items: center;
     padding: 96px 32px;
@@ -122,6 +122,9 @@ export const styles = `
     font-size: 18px;
     color: #334155;
     margin-bottom: 22px;
+    margin-right: 60px;
+    text-align: justify;
+}
   }
   
   .actions {
@@ -172,7 +175,7 @@ export const styles = `
   
   .about {
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: 1fr 500px;
     gap: 32px;
     align-items: start;
   }

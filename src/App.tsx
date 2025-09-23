@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { Mail, ExternalLink } from "lucide-react";
 
 import { styles } from "../src/style/module";
-import skillsData from "./const/skill.json";
 import projectsData from "./const/projects.json";
 import blogPostsData from "./const/blogPosts.json";
 
 import Header from "./components/header";
+import Hero from "./components/hero";
 import Footer from "./components/footer";
+import AboutMe from "./components/aboutMe";
 
 const PortfolioWebsite = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -36,89 +37,8 @@ const PortfolioWebsite = () => {
       <Header activeSection={activeSection} />
 
       <main>
-        <section className="hero" id="home">
-          <div className="intro">
-            <div className="eyebrow">Hi, I'm</div>
-            <h1 className="hero-title">Alex Rivera</h1>
-            <p className="lead">
-              Frontend engineer focused on building accessible, performant web
-              applications with modern technologies.
-            </p>
-            <div className="actions">
-              <a className="cta-btn" href="#contact">
-                <Mail size={16} />
-                Hire me
-              </a>
-              <a href="#projects" className="nav-link">
-                See work
-              </a>
-            </div>
-          </div>
-          <aside className="profile-card">
-            <div className="profile-avatar">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=280&h=280&fit=crop&crop=face"
-                alt="Profile"
-              />
-            </div>
-            <div style={{ fontWeight: "600", fontSize: "16px" }}>
-              Frontend Engineer
-            </div>
-            <div style={{ color: "#64748b", fontSize: "14px" }}>
-              Madrid • España
-            </div>
-          </aside>
-        </section>
-
-        <section className="section about" id="about">
-          <div>
-            <h2 className="section-title">About me</h2>
-            <p style={{ marginBottom: "20px", color: "#334155" }}>
-              I'm a passionate frontend developer with over 5 years of
-              experience creating digital solutions that combine beautiful
-              design with robust functionality. I specialize in React ecosystem
-              and modern web technologies.
-            </p>
-            <p style={{ color: "#334155" }}>
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open source projects, or sharing my knowledge
-              through technical writing and mentoring.
-            </p>
-          </div>
-          <div>
-            <h3
-              style={{
-                fontSize: "20px",
-                fontWeight: "600",
-                marginBottom: "16px",
-              }}
-            >
-              Skills & Technologies
-            </h3>
-            {Object.entries(skillsData).map(([category, skillList]) => (
-              <div key={category} style={{ marginBottom: "20px" }}>
-                <h4
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: "600",
-                    marginBottom: "8px",
-                    textTransform: "capitalize",
-                    color: "#475569",
-                  }}
-                >
-                  {category}
-                </h4>
-                <div className="skills-grid">
-                  {skillList.map((skill, index) => (
-                    <div key={index} className="skill-chip">
-                      {skill}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <Hero />
+        <AboutMe />
 
         <section className="section" id="projects">
           <h2 className="section-title">Selected Projects</h2>

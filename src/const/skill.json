@@ -1,13 +1,13 @@
 {
   "frontend": [
-    "React",
     "JavaScript",
     "TypeScript",
+    "React",
     "Next.js",
     "CSS/Sass",
     "Tailwind"
   ],
-  "backend": ["Node.js", "Python"],
-  "database": ["MongoDB", "PostgreSQL"],
-  "tools": ["Git", "Docker", "AWS", "Figma"]
+  "backend": ["Java", "Spring", "JUnit", "Node.js", "Express", "Python"],
+  "database": ["PostgreSQL", "MongoDB"],
+  "tools": ["Git", "Docker", "Postman", "RabbitMQ", "AWS"]
 }
