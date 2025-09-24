@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { styles } from "../src/style/module";
-import projectsData from "./const/projects.json";
+
 import blogPostsData from "./const/blogPosts.json";
 
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Footer from "./components/footer";
 import AboutMe from "./components/aboutMe";
+import Project from "./components/project";
 
 const PortfolioWebsite = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -39,44 +40,7 @@ const PortfolioWebsite = () => {
       <main>
         <Hero />
         <AboutMe />
-
-        <section className="section" id="projects">
-          <h2 className="section-title">Selected Projects</h2>
-          <div className="projects-grid">
-            {projectsData.featured.map((project, index) => (
-              <div key={index} className="project-card">
-                <div
-                  className="project-thumb"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                />
-                <div className="project-meta">
-                  <div className="project-kicker">{project.tech}</div>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p
-                    style={{
-                      margin: "8px 0 12px 0",
-                      color: "#64748b",
-                      fontSize: "14px",
-                    }}
-                  >
-                    {project.description}
-                  </p>
-                  <a
-                    href={project.link}
-                    className="nav-link"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "4px",
-                    }}
-                  >
-                    View project <ExternalLink size={14} />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <Project />
 
         <section className="section" id="blog">
           <h2 className="section-title">Latest Posts</h2>
