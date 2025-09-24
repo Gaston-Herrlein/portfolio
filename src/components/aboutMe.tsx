@@ -6,7 +6,7 @@ const AboutMe = () => {
       <div>
         <h2 className="section-title">About me</h2>
         <p style={{ marginBottom: "20px", color: "#334155" }}>
-          I'm a full-stack web developer with a back-end specialization. My
+          I'm a full-stack web developer focused primarily on the back-end. My
           journey into programming began after six years of studying Electronic
           Engineering, where I discovered my passion for solving problems
           through technology. Since then, I've dedicated my time to constant

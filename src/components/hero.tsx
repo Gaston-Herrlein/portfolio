@@ -7,9 +7,9 @@ const Hero = () => {
         <div className="eyebrow">Hi, I'm</div>
         <h1 className="hero-title">Gastón Herrlein</h1>
         <p className="lead">
-          Full-stack web developer with a back-end specialization, focused on
-          designing and building modern, scalable, and efficient solutions that
-          respond to the challenges of the digital environment.
+          Full-stack back-end web developer, focused on designing and building
+          modern, scalable, and efficient solutions that respond to the
+          challenges of the digital environment.
         </p>
         <div className="actions">
           <a className="cta-btn" href="#contact">
