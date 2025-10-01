@@ -23,7 +23,7 @@ const Hero = () => {
       </div>
       <aside className="profile-card">
         <div className="profile-avatar">
-          <img src="/profile.jpg" alt="Profile" />
+          <img src="./profile.jpg" alt="Profile" />
         </div>
         <div style={{ fontWeight: "600", fontSize: "16px" }}>
           Full Stack Developer
