@@ -102,10 +102,19 @@ const Project = () => {
       <div className="projects-grid">
         {projectsData.featured.map((project: ProjectItem, index: number) => (
           <div key={index} className="project-card">
-            <div
-              className="project-thumb"
-              style={{ backgroundImage: `url(${project.image})` }}
-            />
+            <div className="project-thumb">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </div>
             <div className="project-meta">
               <div className="project-kicker">{project.tech}</div>
               <TitleWithPopover

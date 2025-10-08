@@ -1,19 +1,10 @@
 {
   "featured": [
     {
-      "title": "E-commerce",
-      "tech": "React • MongoDB • Amazon S3",
-      "description": "Full-stack e-commerce solution with payment integration",
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop",
-      "link": "#",
-      "category": "fullstack",
-      "longDescription": "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo 'Contenido aquí, contenido aquí'. Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de 'Lorem Ipsum' va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)."
-    },
-    {
       "title": "Prodemaster",
       "tech": "Java 17 • Spring Boot • Spring Cloud • Spring Security • PostgreSQL • MongoDB • ValkeyDB • Apache Kafka • Zipkin • Docker • Kubernetes • Azure",
       "description": "Plataforma digital para jugar al Prode entre amigos con predicciones, puntajes y rankings.",
-      "image": "./images/banner Prodemaster.png",
+      "image": "./banner Prodemaster.jpg",
       "link": "#",
       "category": "Web App / Deportes / Social",
       "longDescription": "Prodemaster digitaliza el clásico juego de Prode en una plataforma web moderna que permite crear grupos de amigos, realizar predicciones de fútbol, calcular puntajes y generar rankings amistosos. Integra información de partidos en tiempo real mediante Sportmonks u otras APIs, con un sistema de puntuación flexible que se adapta a reglas personalizadas. La seguridad y confiabilidad se garantizan con Spring Security y bases de datos optimizadas: PostgreSQL para datos estructurados, MongoDB para históricos y ValkeyDB para caché. Además, utiliza Kafka para eventos asíncronos, Zipkin para trazabilidad y despliegue en contenedores con Docker o Kubernetes, evaluando Microsoft Azure como entorno en la nube."
@@ -22,10 +13,19 @@
       "title": "AB-Rosana",
       "tech": "TypeScript • Next.js • JWT • Prisma • PostgreSQL • TailwindCSS • Dropbox • Resend • Vercel",
       "description": "Blog de psicología con publicaciones, sistema de suscripción y contacto directo con la profesional.",
-      "image": "./images/ab-rosana.jpg",
+      "image": "./banner ab-rosana.jpg",
       "link": "https://www.ab-rosana.com/",
       "category": "Web App / Blog / Psicología",
       "longDescription": "AB-Rosana es un blog de psicología diseñado para compartir experiencias y herramientas de psicoanálisis, al tiempo que ofrece un canal directo para contratar sesiones 1 a 1 con la licenciada. Incluye un sistema de suscripción por email que notifica automáticamente nuevas publicaciones, una zona privada para super-admin con plantillas prediseñadas para publicar contenido fácilmente, y un almacenamiento seguro de imágenes en la nube. Con un diseño limpio y minimalista, la web facilita la navegación, integra un apartado de contacto exclusivo y utiliza tecnologías modernas como Next.js, TypeScript y PostgreSQL, desplegándose en Vercel con servicios de apoyo como Dropbox y Resend."
+    },
+    {
+      "title": "WallaClone",
+      "tech": "JavaScript • React • Redux • TypeScript • Node.js • Nodemailer • JWT • MongoDB • RabbitMQ • TailwindCSS • AWS EC2 • AWS S3",
+      "description": "Clon de Wallapop con funcionalidades de compra, venta y gestión de artículos desarrollada por un equipo full stack.",
+      "image": "./banner WallaClone.jpg",
+      "link": "#",
+      "category": "Web App / Marketplace",
+      "longDescription": "WallaClone es un proyecto final de bootcamp que replica las funciones principales de Wallapop, ofreciendo una plataforma de compra y venta de artículos con un diseño propio. Incluye registro y autenticación de usuarios, sistema CRUD completo para publicaciones, búsqueda y filtrado por categoría o nombre, y confirmación por correo electrónico con Nodemailer. Utiliza MongoDB para el almacenamiento de datos, AWS S3 para imágenes y RabbitMQ como sistema de colas para tareas asíncronas. Con un diseño minimalista desarrollado en React y TailwindCSS, la aplicación está desplegada en una instancia EC2 de AWS, integrando Node.js y JWT para una experiencia segura y eficiente."
     }
   ],
   "personal": [
