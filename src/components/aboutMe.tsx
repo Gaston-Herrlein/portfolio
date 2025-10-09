@@ -40,7 +40,7 @@ const AboutMe = () => {
             marginBottom: "16px",
           }}
         >
-          Skills & Technologies
+          Habilidades y tecnología
         </h3>
         {Object.entries(skillsData).map(([category, skillList]) => (
           <div key={category} style={{ marginBottom: "20px" }}>

@@ -14,7 +14,11 @@ const Footer = () => {
         <a href="https://github.com/Gaston-Herrlein" className="social-link">
           <Github size={16} /> GitHub
         </a>
-        <a href="https://twitter.com" className="social-link">
+        <a
+          href="https://twitter.com"
+          className="social-link"
+          style={{ display: "none" }}
+        >
           <Twitter size={16} /> Twitter
         </a>
       </div>

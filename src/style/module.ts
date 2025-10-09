@@ -93,7 +93,7 @@ export const styles = `
     grid-template-columns: 1fr 460px;
     gap: 48px;
     align-items: center;
-    padding: 56px 32px;
+    padding: 96px 32px;
     max-width: 1200px;
     margin: 0 auto;
   }
