@@ -5,22 +5,29 @@ const NavBar = ({ activeSection }: { activeSection: string }) => {
         href="#about"
         className={`nav-link ${activeSection === "about" ? "active" : ""}`}
       >
-        About
+        Sobre mí
+      </a>
+      <a
+        href="#about"
+        className={`nav-link ${activeSection === "about" ? "active" : ""}`}
+      >
+        Habilidades
       </a>
       <a
         href="#projects"
         className={`nav-link ${activeSection === "projects" ? "active" : ""}`}
       >
-        Projects
+        Projectos
       </a>
       <a
         href="#blog"
         className={`nav-link ${activeSection === "blog" ? "active" : ""}`}
+        style={{ display: "none" }}
       >
         Blog
       </a>
       <a className="cta-btn" href="#contact">
-        Contact
+        Contáctame
       </a>
     </nav>
   );

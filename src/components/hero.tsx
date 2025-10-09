@@ -4,20 +4,25 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="intro">
-        <div className="eyebrow">Hi, I'm</div>
+        <div className="eyebrow">Hola, yo soy</div>
         <h1 className="hero-title">Gastón Herrlein</h1>
         <p className="lead">
-          Full-stack back-end web developer, focused on designing and building
-          modern, scalable, and efficient solutions that respond to the
-          challenges of the digital environment.
+          Soy un desarrollador web full-stack back-end con pasión por la
+          tecnología y la innovación, enfocado en diseñar y construir soluciones
+          modernas, escalables y eficientes que aporten valor real y respondan a
+          los desafíos del entorno digital actual.
         </p>
         <div className="actions">
           <a className="cta-btn" href="#contact">
             <Mail size={16} />
-            Hire me
+            Contáctame
           </a>
-          <a href="#projects" className="nav-link">
-            See work
+          <a
+            href="#projects"
+            className="nav-link"
+            style={{ marginLeft: "0.5rem" }}
+          >
+            Ver trabajos
           </a>
         </div>
       </div>

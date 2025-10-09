@@ -4,28 +4,32 @@ const AboutMe = () => {
   return (
     <section className="section about" id="about">
       <div>
-        <h2 className="section-title">About me</h2>
+        <h2 className="section-title">Sobre mí</h2>
         <p style={{ marginBottom: "20px", color: "#334155" }}>
-          I'm a full-stack web developer focused primarily on the back-end. My
-          journey into programming began after six years of studying Electronic
-          Engineering, where I discovered my passion for solving problems
-          through technology. Since then, I've dedicated my time to constant
-          training, first self-taught and then in an intensive bootcamp at
-          KeepCoding, which solidified my decision to grow in this world.
+          Soy un desarrollador web full-stack, con un enfoque principal en el
+          back-end. Mi camino en la programación comenzó después de seis años
+          estudiando Ingeniería Electrónica, etapa en la que descubrí mi
+          verdadera pasión: resolver problemas a través de la tecnología. Desde
+          entonces, he dedicado mi tiempo a formarme de manera constante
+          —primero de forma autodidacta y luego en un bootcamp intensivo en
+          KeepCoding—, experiencia que consolidó mi decisión de crecer
+          profesionalmente en este mundo.
         </p>
         <p style={{ marginBottom: "20px", color: "#334155" }}>
-          For the past two years, I've worked on personal projects and as a
-          freelancer, which allowed me to gain practical experience and develop
-          a true commitment to software quality. I'm motivated by the idea of
-          building technological solutions that not only work, but also add
-          value and improve people's lives.
+          Durante los últimos dos años, he trabajado en proyectos personales y
+          como freelance, lo que me ha permitido adquirir experiencia práctica y
+          desarrollar un fuerte compromiso con la calidad del software. Me
+          motiva la idea de construir soluciones tecnológicas que no solo
+          funcionen, sino que también aporten valor y mejoren la vida de las
+          personas.
         </p>
         <p style={{ color: "#334155" }}>
-          I'm curious, persevering, and constantly learning. I'm currently
-          interested in delving deeper into modern architectures such as
-          microservices and technologies that allow for robust project scaling.
-          For me, web development isn't just a job; it's a path of personal and
-          professional growth where I strive to improve every day.
+          Soy una persona curiosa, perseverante y en aprendizaje continuo.
+          Actualmente, me interesa profundizar en arquitecturas modernas como
+          los microservicios y en tecnologías que permitan escalar proyectos de
+          forma sólida. Para mí, el desarrollo web no es solo un trabajo, sino
+          un camino de crecimiento personal y profesional en el que busco
+          superarme cada día.
         </p>
       </div>
       <div>
