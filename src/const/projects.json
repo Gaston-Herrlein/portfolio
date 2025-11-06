@@ -23,7 +23,7 @@
       "tech": "JavaScript • React • Redux • TypeScript • Node.js • Nodemailer • JWT • MongoDB • RabbitMQ • TailwindCSS • AWS EC2 • AWS S3",
       "description": "Clon de Wallapop con funcionalidades de compra, venta y gestión de artículos desarrollada por un equipo full stack.",
       "image": "./banner WallaClone.jpg",
-      "link": "#",
+      "link": "https://wallaclone-frontend.vercel.app/",
       "category": "Web App / Marketplace",
       "longDescription": "WallaClone es un proyecto final de bootcamp que replica las funciones principales de Wallapop, ofreciendo una plataforma de compra y venta de artículos con un diseño propio. Incluye registro y autenticación de usuarios, sistema CRUD completo para publicaciones, búsqueda y filtrado por categoría o nombre, y confirmación por correo electrónico con Nodemailer. Utiliza MongoDB para el almacenamiento de datos, AWS S3 para imágenes y RabbitMQ como sistema de colas para tareas asíncronas. Con un diseño minimalista desarrollado en React y TailwindCSS, la aplicación está desplegada en una instancia EC2 de AWS, integrando Node.js y JWT para una experiencia segura y eficiente."
     }
