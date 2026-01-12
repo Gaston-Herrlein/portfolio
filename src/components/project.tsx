@@ -102,19 +102,13 @@ const Project = () => {
       <div className="projects-grid">
         {projectsData.featured.map((project: ProjectItem, index: number) => (
           <div key={index} className="project-card">
-            <div className="project-thumb">
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  display: "block",
-                }}
-              />
-            </div>
+              <div className="project-thumb">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                />
+              </div>
             <div className="project-meta">
               <div className="project-kicker">{project.tech}</div>
               <TitleWithPopover
@@ -124,13 +118,7 @@ const Project = () => {
                   `${project.description} · Tech: ${project.tech}`
                 }
               />
-              <p
-                style={{
-                  margin: "8px 0 12px 0",
-                  color: "#64748b",
-                  fontSize: "14px",
-                }}
-              >
+              <p className="project-description">
                 {project.description}
               </p>
               <a
