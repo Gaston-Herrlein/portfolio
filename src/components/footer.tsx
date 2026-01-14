@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="site-footer">
-      <div>© 2025 Gastón Herrlein</div>
+      <div className="footer-text">© 2025 Gastón Herrlein</div>
       <div className="socials">
         <a
           href="https://linkedin.com/in/gaston-herrlein"

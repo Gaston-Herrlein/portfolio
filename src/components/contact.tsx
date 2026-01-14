@@ -5,25 +5,12 @@ const Contact = () => {
     <section className="section contact" id="contact">
       <div className="contact-content">
         <h2 className="section-title">Trabajemos juntos</h2>
-        <p
-          style={{
-            fontSize: "18px",
-            color: "#334155",
-            marginBottom: "32px",
-          }}
-        >
+        <p className="contact-text">
           Siempre estoy interesado en escuchar sobre nuevas oportunidades y
           proyectos emocionantes.
         </p>
-        <div
-          style={{
-            display: "flex",
-            gap: "16px",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <a className="cta-btn" href="mailto:alex@example.com">
+        <div className="actions" style={{ justifyContent: "center" }}>
+          <a className="cta-btn" href="mailto:example@mail.com">
             <Mail size={16} />
             Enviar email
           </a>

@@ -5,7 +5,7 @@ const AboutMe = () => {
     <section className="section about" id="about">
       <div>
         <h2 className="section-title">Sobre mí</h2>
-        <p style={{ marginBottom: "20px", color: "#334155" }}>
+        <p className="about-text">
           Soy un desarrollador web full-stack, con un enfoque principal en el
           back-end. Mi camino en la programación comenzó después de seis años
           estudiando Ingeniería Electrónica, etapa en la que descubrí mi
@@ -15,7 +15,7 @@ const AboutMe = () => {
           KeepCoding—, experiencia que consolidó mi decisión de crecer
           profesionalmente en este mundo.
         </p>
-        <p style={{ marginBottom: "20px", color: "#334155" }}>
+        <p className="about-text">
           Durante los últimos dos años, he trabajado en proyectos personales y
           como freelance, lo que me ha permitido adquirir experiencia práctica y
           desarrollar un fuerte compromiso con la calidad del software. Me
@@ -23,7 +23,7 @@ const AboutMe = () => {
           funcionen, sino que también aporten valor y mejoren la vida de las
           personas.
         </p>
-        <p style={{ color: "#334155" }}>
+        <p className="about-text">
           Soy una persona curiosa, perseverante y en aprendizaje continuo.
           Actualmente, me interesa profundizar en arquitecturas modernas como
           los microservicios y en tecnologías que permitan escalar proyectos de
