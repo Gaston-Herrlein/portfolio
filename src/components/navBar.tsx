@@ -15,8 +15,8 @@ const NavBar = ({
         Sobre mí
       </a>
       <a
-        href="#about"
-        className={`nav-link ${activeSection === "about" ? "active" : ""}`}
+        href="#skills"
+        className={`nav-link ${activeSection === "skills" ? "active" : ""}`}
         onClick={onLinkClick}
       >
         Habilidades

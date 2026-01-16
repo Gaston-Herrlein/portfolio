@@ -12,14 +12,6 @@ const Header = ({ activeSection }: { activeSection: string }) => {
         <div className="mobile-nav">
           <MobileMenu activeSection={activeSection} />
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "6px",
-            alignItems: "flex-end",
-          }}
-        ></div>
       </div>
     </header>
   );

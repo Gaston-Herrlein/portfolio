@@ -14,13 +14,12 @@ const PortfolioWebsite = () => {
   const [activeSection, setActiveSection] = useState("home");
   useEffect(() => {
     const handleScroll = () => {
-      // Update active section based on scroll position
-      const sections = ["home", "about", "projects", "blog", "contact"];
+      const sections = ["home", "about", "skills", "projects", "blog", "contact"];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          return rect.top <= 120 && rect.bottom >= 120;
         }
         return false;
       });

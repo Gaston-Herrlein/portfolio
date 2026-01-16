@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 import NavBar from "./navBar";
 
 const MobileMenu = ({ activeSection }: { activeSection: string }) => {
@@ -41,6 +42,13 @@ const MobileMenu = ({ activeSection }: { activeSection: string }) => {
           className={`mobile-menu ${isOpen ? "open" : ""}`}
           onClick={(e) => e.stopPropagation()}
         >
+          <button
+            className="mobile-menu-close"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={20} />
+          </button>
           <NavBar activeSection={activeSection} onLinkClick={handleLinkClick} />
         </nav>
       </div>

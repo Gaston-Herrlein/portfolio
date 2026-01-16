@@ -2,8 +2,8 @@ import skillsData from "../const/skill.json";
 
 const AboutMe = () => {
   return (
-    <section className="section about" id="about">
-      <div>
+    <>
+      <section className="section" id="about">
         <h2 className="section-title">Sobre mí</h2>
         <p className="about-text">
           Soy un desarrollador web full-stack, con un enfoque principal en el
@@ -31,41 +31,25 @@ const AboutMe = () => {
           un camino de crecimiento personal y profesional en el que busco
           superarme cada día.
         </p>
-      </div>
-      <div>
-        <h3
-          style={{
-            fontSize: "20px",
-            fontWeight: "600",
-            marginBottom: "16px",
-          }}
-        >
-          Habilidades y tecnología
-        </h3>
-        {Object.entries(skillsData).map(([category, skillList]) => (
-          <div key={category} style={{ marginBottom: "20px" }}>
-            <h4
-              style={{
-                fontSize: "16px",
-                fontWeight: "600",
-                marginBottom: "8px",
-                textTransform: "capitalize",
-                color: "#475569",
-              }}
-            >
-              {category}
-            </h4>
-            <div className="skills-grid">
-              {skillList.map((skill, index) => (
-                <div key={index} className="skill-chip">
-                  {skill}
-                </div>
-              ))}
+      </section>
+      <section className="section" id="skills">
+        <h2 className="section-title">Habilidades y tecnología</h2>
+        <div className="skills-container">
+          {Object.entries(skillsData).map(([category, skillList]) => (
+            <div key={category} className="skill-category">
+              <h3 className="skill-category-title">{category}</h3>
+              <div className="skills-grid">
+                {skillList.map((skill, index) => (
+                  <div key={index} className="skill-chip">
+                    {skill}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

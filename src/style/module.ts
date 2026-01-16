@@ -1,11 +1,11 @@
 export const styles = `
   :root {
     --container-width: 1200px;
-    --section-padding: clamp(32px, 5vw, 64px);
-    --header-padding: clamp(16px, 3vw, 24px) clamp(20px, 4vw, 32px);
-    --gap-sm: 12px;
-    --gap-md: 24px;
-    --gap-lg: 48px;
+    --section-padding: clamp(24px, 4vw, 48px);
+    --header-padding: clamp(12px, 2.5vw, 20px) clamp(16px, 3vw, 28px);
+    --gap-sm: 10px;
+    --gap-md: 20px;
+    --gap-lg: 36px;
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -205,13 +205,6 @@ export const styles = `
     color: #091024;
   }
   
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap-lg);
-    align-items: start;
-  }
-  
   .about-text {
     font-size: clamp(15px, 2vw, 17px);
     color: #334155;
@@ -219,11 +212,24 @@ export const styles = `
     margin: 0;
   }
   
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 28px);
+  }
+  
+  .skill-category-title {
+    font-size: clamp(16px, 2.2vw, 18px);
+    font-weight: 600;
+    margin: 0 0 clamp(12px, 2vw, 16px) 0;
+    color: #475569;
+    text-transform: capitalize;
+  }
+  
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: var(--gap-sm);
-    margin-top: clamp(16px, 3vw, 24px);
   }
   
   .skill-chip {
@@ -470,7 +476,6 @@ export const styles = `
     justify-content: space-around;
     width: 20px;
     height: 16px;
-    position: relative;
   }
   
   .menu-icon span {
@@ -479,23 +484,6 @@ export const styles = `
     width: 100%;
     background: #0b1220;
     border-radius: 2px;
-    transition: all 0.2s ease;
-  }
-  
-  .menu-icon.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .menu-icon.open span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .menu-icon.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-  
-  .dark .menu-icon span {
-    background: #e5e7eb;
   }
   
   .mobile-menu-overlay {
@@ -530,11 +518,38 @@ export const styles = `
     transition: transform 0.3s ease;
     z-index: 1000;
     overflow-y: auto;
-    padding: 80px 24px 24px;
+    padding: 72px 24px 24px;
   }
   
   .mobile-menu.open {
     transform: translateX(0);
+  }
+  
+  .mobile-menu-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(15,20,30,0.04);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.16s ease;
+  }
+  
+  .mobile-menu-close:hover {
+    background: rgba(15,98,254,0.1);
+  }
+  
+  .mobile-menu-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: #0b1220;
+    stroke-width: 2;
   }
   
   .mobile-menu .site-nav {
@@ -548,6 +563,30 @@ export const styles = `
     border-radius: 8px;
     font-size: 15px;
     transition: background-color 0.16s ease, color 0.16s ease;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  
+  .mobile-menu.open .nav-link {
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  .mobile-menu.open .nav-link:nth-child(1) { animation-delay: 0.05s; }
+  .mobile-menu.open .nav-link:nth-child(2) { animation-delay: 0.1s; }
+  .mobile-menu.open .nav-link:nth-child(3) { animation-delay: 0.15s; }
+  .mobile-menu.open .nav-link:nth-child(4) { animation-delay: 0.2s; }
+  .mobile-menu.open .cta-btn {
+    animation: slideIn 0.3s ease forwards;
+    animation-delay: 0.25s;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   
   .mobile-menu .nav-link:hover {
@@ -566,15 +605,6 @@ export const styles = `
     margin-top: 8px;
   }
   
-  .dark .mobile-menu {
-    background: #0f172a;
-    box-shadow: -4px 0 24px rgba(0,0,0,0.4);
-  }
-  
-  .dark .mobile-menu-overlay {
-    background: rgba(0, 0, 0, 0.7);
-  }
-  
   @media (max-width: 1024px) {
     .hero {
       grid-template-columns: 1fr 1fr;
@@ -587,17 +617,6 @@ export const styles = `
     }
   }
   
-  @media (max-width: 660px) {
-    .desktop-nav {
-      display: none;
-    }
-    
-    .mobile-nav {
-      display: block;
-    }
-  }
-  
-  @media (max-width: 640px) {
   @media (max-width: 768px) {
     .hero {
       grid-template-columns: 1fr;
@@ -635,6 +654,14 @@ export const styles = `
     .blog-date {
       margin-left: 0;
       margin-top: 4px;
+    }
+    
+    .desktop-nav {
+      display: none;
+    }
+    
+    .mobile-nav {
+      display: block;
     }
   }
   
