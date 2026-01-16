@@ -102,13 +102,9 @@ const Project = () => {
       <div className="projects-grid">
         {projectsData.featured.map((project: ProjectItem, index: number) => (
           <div key={index} className="project-card">
-              <div className="project-thumb">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                />
-              </div>
+            <div className="project-thumb">
+              <img src={project.image} alt={project.title} loading="lazy" />
+            </div>
             <div className="project-meta">
               <div className="project-kicker">{project.tech}</div>
               <TitleWithPopover
@@ -118,9 +114,7 @@ const Project = () => {
                   `${project.description} · Tech: ${project.tech}`
                 }
               />
-              <p className="project-description">
-                {project.description}
-              </p>
+              <p className="project-description">{project.description}</p>
               <a
                 href={project.link}
                 className="nav-link"
