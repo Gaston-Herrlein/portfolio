@@ -26,7 +26,7 @@ const PortfolioWebsite = () => {
       if (current) setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
