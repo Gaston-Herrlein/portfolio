@@ -17,11 +17,7 @@ const Hero = () => {
             <Mail size={16} />
             Contáctame
           </a>
-          <a
-            href="#projects"
-            className="nav-link"
-            style={{ marginLeft: "0.5rem" }}
-          >
+          <a href="#projects" className="nav-link hero-link">
             Ver trabajos
           </a>
         </div>
@@ -30,12 +26,8 @@ const Hero = () => {
         <div className="profile-avatar">
           <img src="./profile.jpg" alt="Profile" />
         </div>
-        <div style={{ fontWeight: "600", fontSize: "16px" }}>
-          Full Stack Developer
-        </div>
-        <div style={{ color: "#64748b", fontSize: "14px" }}>
-          Coruña • España
-        </div>
+        <div className="profile-role">Full Stack Developer</div>
+        <div className="profile-location">Coruña • España</div>
       </aside>
     </section>
   );

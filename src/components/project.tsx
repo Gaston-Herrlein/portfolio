@@ -98,15 +98,34 @@ type ProjectItem = {
 const Project = () => {
   return (
     <section className="section" id="projects">
-      <h2 className="section-title">Selected Projects</h2>
+      <h2 className="section-title">Projectos</h2>
       <div className="projects-grid">
         {projectsData.featured.map((project: ProjectItem, index: number) => (
           <div key={index} className="project-card">
             <div className="project-thumb">
               <img src={project.image} alt={project.title} loading="lazy" />
+              <div className="project-thumb-overlay">
+                <a
+                  href={project.link}
+                  className="project-thumb-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View project <ExternalLink size={16} />
+                </a>
+              </div>
             </div>
             <div className="project-meta">
-              <div className="project-kicker">{project.tech}</div>
+              <div className="project-tech-tags">
+                {project.tech
+                  .split(", ")
+                  .slice(0, 3)
+                  .map((tech, i) => (
+                    <span key={i} className="project-tech-tag">
+                      {tech}
+                    </span>
+                  ))}
+              </div>
               <TitleWithPopover
                 title={project.title}
                 detail={
@@ -115,17 +134,6 @@ const Project = () => {
                 }
               />
               <p className="project-description">{project.description}</p>
-              <a
-                href={project.link}
-                className="nav-link"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                }}
-              >
-                View project <ExternalLink size={14} />
-              </a>
             </div>
           </div>
         ))}
