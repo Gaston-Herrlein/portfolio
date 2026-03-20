@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,13 +13,6 @@ const Footer = () => {
         </a>
         <a href="https://github.com/Gaston-Herrlein" className="social-link">
           <Github size={16} /> GitHub
-        </a>
-        <a
-          href="https://twitter.com"
-          className="social-link"
-          style={{ display: "none" }}
-        >
-          <Twitter size={16} /> Twitter
         </a>
       </div>
     </footer>

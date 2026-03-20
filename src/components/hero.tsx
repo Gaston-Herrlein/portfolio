@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
       <aside className="profile-card">
         <div className="profile-avatar">
-          <img src="./profile.jpg" alt="Profile" />
+          <img src="./profile.jpg" alt="Foto de perfil de Gastón Herrlein" width={140} height={140} />
         </div>
         <div className="profile-role">Full Stack Developer</div>
         <div className="profile-location">Coruña • España</div>

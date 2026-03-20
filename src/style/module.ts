@@ -60,6 +60,25 @@ export const styles = `
     background-color: rgba(255,255,255,0.8);
     border-bottom: 1px solid rgba(15,20,30,0.04);
   }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 10000;
+    padding: 8px 16px;
+    background: #0f62fe;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
   
   .header-controls {
     display: flex;
@@ -250,6 +269,7 @@ export const styles = `
     max-width: var(--container-width);
     margin: 0 auto;
     border-top: 1px solid var(--border-subtle);
+    scroll-margin-top: 80px;
   }
   
   .section:first-of-type {

@@ -33,8 +33,9 @@ const PortfolioWebsite = () => {
   return (
     <>
       <style>{styles}</style>
+      <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
       <Header activeSection={activeSection} />
-      <main>
+      <main id="main-content">
         <Hero />
         <AboutMe />
         <Project />
