@@ -100,8 +100,8 @@ const Project = () => {
     <section className="section" id="projects">
       <h2 className="section-title">Projectos</h2>
       <div className="projects-grid">
-        {projectsData.featured.map((project: ProjectItem, index: number) => (
-          <div key={index} className="project-card">
+        {projectsData.featured.map((project: ProjectItem) => (
+          <div key={project.title} className="project-card">
             <div className="project-thumb">
               <img src={project.image} alt={project.title} loading="lazy" />
               <div className="project-thumb-overlay">

@@ -116,6 +116,10 @@ export const styles = `
     border-radius: var(--radius-sm);
     transition: color 0.16s ease, background-color 0.16s ease;
   }
+
+  .nav-link.hidden {
+    display: none;
+  }
   
   .nav-link:hover {
     color: #0f62fe;

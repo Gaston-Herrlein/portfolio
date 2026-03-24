@@ -30,8 +30,7 @@ const NavBar = ({
       </a>
       <a
         href="#blog"
-        className={`nav-link ${activeSection === "blog" ? "active" : ""}`}
-        style={{ display: "none" }}
+        className={`nav-link hidden ${activeSection === "blog" ? "active" : ""}`}
         onClick={onLinkClick}
       >
         Blog
