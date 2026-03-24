@@ -87,6 +87,8 @@ const TitleWithPopover = ({ title, detail }: TitleWithPopoverProps) => {
 
 type ProjectItem = {
   title: string;
+  year?: string;
+  role?: string;
   tech: string;
   description: string;
   image: string;
@@ -126,6 +128,12 @@ const Project = () => {
                     </span>
                   ))}
               </div>
+              {(project.year || project.role) && (
+                <div className="project-year-role">
+                  {project.year && <span>{project.year}</span>}
+                  {project.role && <span>· {project.role}</span>}
+                </div>
+              )}
               <TitleWithPopover
                 title={project.title}
                 detail={

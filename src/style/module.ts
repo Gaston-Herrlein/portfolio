@@ -203,7 +203,14 @@ export const styles = `
     max-width: 100%;
     line-height: 1.6;
   }
-  
+
+  .tech-summary {
+    font-size: clamp(13px, 1.5vw, 15px);
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: clamp(16px, 3vw, 24px);
+  }
+
   .actions {
     display: flex;
     gap: var(--gap-sm);
@@ -459,7 +466,14 @@ export const styles = `
     line-height: 1.5;
     margin: 4px 0 0 0;
   }
-  
+
+  .project-year-role {
+    font-size: clamp(12px, 1.5vw, 13px);
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
   .project-tech-tags {
     display: flex;
     flex-wrap: wrap;

@@ -2,6 +2,8 @@
   "featured": [
     {
       "title": "Prodemaster",
+      "year": "2024",
+      "role": "Lead Developer",
       "tech": "Java 17 • Spring Boot • Spring Cloud • Spring Security • PostgreSQL • MongoDB • ValkeyDB • Apache Kafka • Zipkin • Docker • Kubernetes • Azure",
       "description": "Plataforma digital para jugar al Prode entre amigos con predicciones, puntajes y rankings.",
       "image": "./banner Prodemaster.jpg",
@@ -11,6 +13,8 @@
     },
     {
       "title": "AB-Rosana",
+      "year": "2024",
+      "role": "Full Stack Developer",
       "tech": "TypeScript • Next.js • JWT • Prisma • PostgreSQL • TailwindCSS • Dropbox • Resend • Vercel",
       "description": "Blog de psicología con publicaciones, sistema de suscripción y contacto directo con la profesional.",
       "image": "./banner ab-rosana.jpg",
@@ -20,6 +24,8 @@
     },
     {
       "title": "WallaClone",
+      "year": "2023",
+      "role": "Full Stack Developer",
       "tech": "JavaScript • React • Redux • TypeScript • Node.js • Nodemailer • JWT • MongoDB • RabbitMQ • TailwindCSS • AWS EC2 • AWS S3",
       "description": "Clon de Wallapop con funcionalidades de compra, venta y gestión de artículos desarrollada por un equipo full stack.",
       "image": "./banner WallaClone.jpg",

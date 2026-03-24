@@ -5,7 +5,8 @@ import { styles } from "../src/style/module";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Footer from "./components/footer";
-import AboutMe from "./components/aboutMe";
+import About from "./components/about";
+import Skills from "./components/skills";
 import Project from "./components/project";
 //import Blogs from "./components/blog";
 import Contact from "./components/contact";
@@ -14,7 +15,7 @@ const PortfolioWebsite = () => {
   const [activeSection, setActiveSection] = useState("home");
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "blog", "contact"];
+      const sections = ["home", "skills", "projects", "about", "contact"];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -37,8 +38,9 @@ const PortfolioWebsite = () => {
       <Header activeSection={activeSection} />
       <main id="main-content">
         <Hero />
-        <AboutMe />
+        <Skills />
         <Project />
+        <About />
         {/* <Blogs /> */}
         <Contact />
       </main>

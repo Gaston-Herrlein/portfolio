@@ -12,6 +12,9 @@ const Hero = () => {
           modernas, escalables y eficientes que aporten valor real y respondan a
           los desafíos del entorno digital actual.
         </p>
+        <p className="tech-summary">
+          Java Spring Boot • Node.js • PostgreSQL • Docker
+        </p>
         <div className="actions">
           <a className="cta-btn" href="#contact">
             <Mail size={16} />

@@ -1,13 +1,7 @@
 {
-  "frontend": [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "CSS/Sass",
-    "Tailwind"
-  ],
-  "backend": ["Java", "Spring", "JUnit", "Node.js", "Express", "Python"],
-  "database": ["PostgreSQL", "MongoDB"],
-  "tools": ["Git", "Docker", "Postman", "RabbitMQ", "AWS"]
+  "Backend": ["Java", "Spring", "JUnit", "Node.js", "Express", "Python"],
+  "Frontend": ["JavaScript", "TypeScript", "React", "Next.js", "CSS/Sass", "Tailwind"],
+  "Database": ["PostgreSQL", "MongoDB"],
+  "DevOps & Cloud": ["Docker", "AWS", "Azure", "Git"],
+  "Tools": ["RabbitMQ", "Kafka", "Postman"]
 }
