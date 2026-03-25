@@ -204,13 +204,6 @@ export const styles = `
     line-height: 1.6;
   }
 
-  .tech-summary {
-    font-size: clamp(13px, 1.5vw, 15px);
-    color: var(--color-primary);
-    font-weight: 600;
-    margin-bottom: clamp(16px, 3vw, 24px);
-  }
-
   .actions {
     display: flex;
     gap: var(--gap-sm);
@@ -218,37 +211,93 @@ export const styles = `
     flex-wrap: wrap;
   }
   
-  .hero-link {
-    margin-left: var(--gap-sm);
-  }
-  
   @media (max-width: 480px) {
-    .hero-link {
-      margin-left: 0;
-      margin-top: var(--gap-sm);
+    .cta-secondary {
+      width: 100%;
+      justify-content: center;
     }
   }
   
   .profile-card {
+    position: relative;
     width: 100%;
     max-width: clamp(280px, 40vw, 400px);
-    padding: clamp(20px, 4vw, 28px);
+    padding: clamp(28px, 5vw, 40px);
     border-radius: var(--radius-lg);
-    background: linear-gradient(180deg, #fff, #f8fafc);
-    box-shadow: 0 8px 24px rgba(2,6,23,0.06);
+    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+    box-shadow: 
+      0 8px 32px rgba(2,6,23,0.08),
+      0 0 0 1px rgba(15,98,254,0.06),
+      inset 0 1px 0 rgba(255,255,255,0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(8px, 2vw, 12px);
+    gap: clamp(10px, 2vw, 16px);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0f62fe, transparent);
+    opacity: 0.6;
+    animation: shimmer 3s linear infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  
+  .profile-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(15,98,254,0.03) 0%, transparent 50%);
+    pointer-events: none;
+    animation: pulse 8s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  
+  .profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 12px 40px rgba(2,6,23,0.12),
+      0 0 0 1px rgba(15,98,254,0.12),
+      0 0 24px rgba(15,98,254,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.8);
   }
   
   .profile-avatar {
+    position: relative;
     width: clamp(100px, 20vw, 140px);
     height: clamp(100px, 20vw, 140px);
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid rgba(15,98,254,0.08);
-    box-shadow: 0 0 0 rgba(15,98,254,0.12), 0 4px 16px rgba(2,6,23,0.08);
+    border: 3px solid rgba(15,98,254,0.15);
+    box-shadow: 
+      0 0 0 6px rgba(15,98,254,0.06),
+      0 4px 20px rgba(2,6,23,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .profile-card:hover .profile-avatar {
+    box-shadow: 
+      0 0 0 6px rgba(15,98,254,0.1),
+      0 0 0 10px rgba(15,98,254,0.04),
+      0 8px 24px rgba(2,6,23,0.12);
+    transform: scale(1.02);
   }
   
   @media (max-width: 400px) {
@@ -265,14 +314,64 @@ export const styles = `
   }
   
   .profile-role {
+    position: relative;
     font-weight: 600;
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: clamp(15px, 2vw, 18px);
     color: #0b1220;
+    letter-spacing: 0.02em;
   }
   
   .profile-location {
+    position: relative;
     color: #64748b;
     font-size: clamp(12px, 1.8vw, 14px);
+  }
+  
+  .cta-secondary {
+    background-color: transparent;
+    color: #0f62fe;
+    border: 1.5px solid rgba(15,98,254,0.25);
+    box-shadow: none;
+  }
+  
+  .cta-secondary:hover {
+    background-color: rgba(15,98,254,0.06);
+    box-shadow: 0 4px 12px rgba(15,98,254,0.1);
+  }
+  
+  .tech-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(8px, 2vw, 12px);
+    margin-bottom: clamp(16px, 3vw, 24px);
+  }
+  
+  .tech-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 1.5vw, 8px);
+    padding: clamp(4px, 1vw, 6px) clamp(8px, 1.5vw, 12px);
+    background-color: rgba(15,98,254,0.04);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(15,98,254,0.08);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .tech-item:hover {
+    background-color: rgba(15,98,254,0.08);
+    transform: translateY(-1px);
+  }
+  
+  .tech-icon {
+    width: clamp(18px, 3vw, 22px);
+    height: clamp(18px, 3vw, 22px);
+    opacity: 0.85;
+  }
+  
+  .tech-name {
+    font-size: clamp(12px, 1.5vw, 14px);
+    color: #0b1220;
+    font-weight: 500;
   }
   
   .section {
