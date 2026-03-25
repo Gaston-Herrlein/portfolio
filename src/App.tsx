@@ -38,8 +38,8 @@ const PortfolioWebsite = () => {
       <Header activeSection={activeSection} />
       <main id="main-content">
         <Hero />
-        <Skills />
         <Project />
+        <Skills />
         <About />
         {/* <Blogs /> */}
         <Contact />
