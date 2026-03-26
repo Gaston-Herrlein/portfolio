@@ -464,21 +464,62 @@ export const styles = `
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--gap-md);
   }
-  
+
+  .projects-group {
+    margin-bottom: clamp(28px, 4vw, 40px);
+  }
+
+  .projects-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .projects-group-title {
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 600;
+    margin: 0 0 clamp(16px, 2vw, 20px) 0;
+    color: var(--text-secondary);
+  }
+
   .project-card {
+    position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
     background: #fff;
-    border: 1px solid rgba(15,20,30,0.06);
-    box-shadow: 0 4px 16px rgba(2,6,23,0.05);
+    border: 1px solid rgba(15,98,254,0.08);
+    box-shadow: 
+      0 4px 16px rgba(2,6,23,0.05),
+      0 0 0 1px rgba(15,98,254,0.03) inset;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(15,98,254,0.12) 0%, rgba(15,98,254,0.03) 50%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
   }
   
   .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(2,6,23,0.08);
+    transform: translateY(-3px);
+    border-color: rgba(15,98,254,0.18);
+    box-shadow: 
+      0 8px 28px rgba(2,6,23,0.08),
+      0 0 20px rgba(15,98,254,0.08);
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
   }
   
   .project-thumb {
@@ -502,12 +543,12 @@ export const styles = `
   .project-thumb-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15,98,254,0.7);
+    background: linear-gradient(180deg, rgba(15,98,254,0.65) 0%, rgba(15,98,254,0.5) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.25s ease;
   }
   
   .project-thumb:hover .project-thumb-overlay {
@@ -515,7 +556,7 @@ export const styles = `
   }
   
   .project-thumb:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
   
   .project-thumb-link {
@@ -578,18 +619,49 @@ export const styles = `
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 6px;
-    margin-bottom: 6px;
+    gap: 5px;
+    margin-bottom: 8px;
   }
-  
+
   .project-tech-tag {
-    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 6px;
+    border-radius: var(--radius-sm);
+    background-color: rgba(15,98,254,0.05);
+    border: 1px solid rgba(15,98,254,0.08);
+    transition: background-color 0.16s ease, border-color 0.16s ease;
+  }
+
+  .project-tech-tag:hover {
+    background-color: rgba(15,98,254,0.1);
+    border-color: rgba(15,98,254,0.15);
+  }
+
+  .project-tech-tag-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+
+  .project-tech-tag-text {
+    font-size: 11px;
     font-weight: 500;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: rgba(15,98,254,0.12);
+    color: #475569;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .project-tech-tag-more {
+    cursor: pointer;
     color: var(--primary-color);
-    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+
+  .project-tech-tag-more:hover {
+    background-color: rgba(15,98,254,0.12);
   }
   
   .blog-list {
@@ -1030,4 +1102,276 @@ export const styles = `
       animation: none !important;
     }
   }
+
+  /*
+ * ProjectCard — Futuristic Minimal Redesign
+ *
+ * Estrategia visual:
+ *  - Fondo con micro-gradiente para romper el blanco plano
+ *  - Borde iluminado vía gradient border (pseudo-elemento ::before)
+ *  - Sombra de color para dar profundidad "lumínica" sin agresividad
+ *  - Hover: elevación suave + destello de borde + zoom-in delicado de imagen
+ *  - Tech tags con glow propio
+ *  - Overlay del thumb más atmosférico (oscuro → acento)
+ *  - Todas las transiciones ≤ 300 ms, curva ease-out para sensación fluida
+ */
+
+/* ─── Card container ──────────────────────────────────────────────────── */
+
+.project-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff 0%, #f7f9fc 100%);
+  display: flex;
+  flex-direction: column;
+
+  /* Borde base: semitransparente, casi invisible */
+  border: 1px solid rgba(15, 98, 254, 0.10);
+
+  /* Sombra suave con tinte azul para "glow ambiental" */
+  box-shadow:
+    0 2px 8px  rgba(2, 6, 23, 0.04),
+    0 6px 20px rgba(2, 6, 23, 0.06),
+    0 0  0 1px rgba(15, 98, 254, 0.04) inset;
+
+  transition:
+    transform        0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow       0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color     0.28s ease;
+}
+
+/* Borde iluminado: gradient border pintado como anillo
+   usando mask-composite para no tapar el contenido */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: var(--radius-md);
+  padding: 1px;                         /* grosor del borde */
+  background: linear-gradient(
+    135deg,
+    rgba(15, 98, 254, 0.30) 0%,
+    rgba(15, 98, 254, 0.06) 40%,
+    rgba(15, 98, 254, 0.18) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+/* Línea de acento superior — siempre visible, muy sutil */
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(15, 98, 254, 0.40),
+    transparent
+  );
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.28s ease, left 0.28s ease, right 0.28s ease;
+}
+
+/* ─── Hover state ─────────────────────────────────────────────────────── */
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  border-color: rgba(15, 98, 254, 0.22);
+  box-shadow:
+    0 4px 12px  rgba(2, 6, 23, 0.06),
+    0 12px 32px rgba(2, 6, 23, 0.10),
+    0 0  28px   rgba(15, 98, 254, 0.09);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  left: 4%;
+  right: 4%;
+}
+
+/* ─── Thumbnail ───────────────────────────────────────────────────────── */
+
+.project-thumb {
+  aspect-ratio: 16 / 10;
+  background-color: #eef2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              filter  0.35s ease;
+  filter: saturate(0.92) brightness(0.98);
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.04);
+  filter: saturate(1.05) brightness(1.01);
+}
+
+/* Overlay atmosférico: negro → acento en lugar de azul plano */
+.project-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(5, 10, 30, 0.72) 0%,
+    rgba(15, 98, 254, 0.52) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.25s ease;
+}
+
+.project-thumb:hover .project-thumb-overlay {
+  opacity: 1;
+}
+
+/* Botón "View project" dentro del overlay */
+.project-thumb-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(13px, 2vw, 15px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.02em;
+  transition: background-color 0.18s ease,
+              border-color      0.18s ease,
+              transform         0.18s ease;
+}
+
+.project-thumb-link:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.44);
+  transform: translateY(-1px);
+}
+
+/* ─── Meta / content area ─────────────────────────────────────────────── */
+
+.project-meta {
+  padding: clamp(12px, 2.5vw, 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  position: relative;
+  z-index: 1;          /* queda sobre el ::before */
+}
+
+/* ─── Tech tags ───────────────────────────────────────────────────────── */
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.project-tech-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(15, 98, 254, 0.08);
+  color: var(--primary-color);
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(15, 98, 254, 0.14);
+  transition: background-color 0.18s ease,
+              box-shadow       0.18s ease;
+}
+
+.project-card:hover .project-tech-tag {
+  background: rgba(15, 98, 254, 0.13);
+  box-shadow: 0 0 6px rgba(15, 98, 254, 0.18);
+}
+
+/* ─── Year / role ─────────────────────────────────────────────────────── */
+
+.project-year-role {
+  font-size: clamp(11px, 1.5vw, 12px);
+  color: var(--primary-color);
+  font-weight: 500;
+  opacity: 0.75;
+  letter-spacing: 0.03em;
+  display: flex;
+  gap: 4px;
+}
+
+/* ─── Title ───────────────────────────────────────────────────────────── */
+
+.project-title {
+  margin: 2px 0 0;
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 700;
+  color: #091024;
+  letter-spacing: -0.01em;
+  transition: color 0.18s ease;
+}
+
+.project-card:hover .project-title {
+  color: #0f62fe;
+}
+
+/* ─── Description ─────────────────────────────────────────────────────── */
+
+.project-description {
+  font-size: clamp(13px, 1.8vw, 14px);
+  color: #64748b;
+  line-height: 1.55;
+  margin: 2px 0 0;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card::before,
+  .project-card::after,
+  .project-thumb img,
+  .project-thumb-overlay,
+  .project-thumb-link,
+  .project-tech-tag,
+  .project-title {
+    transition: none !important;
+    animation: none !important;
+  }
+}
 `;
