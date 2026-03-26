@@ -1,32 +1,21 @@
 {
-  "featured": [
+  "personal": [
     {
       "title": "Prodemaster",
-      "year": "2024",
+      "year": "2026",
       "role": "Lead Developer",
-      "tech": "Java 17 • Spring Boot • Spring Cloud • Spring Security • PostgreSQL • MongoDB • ValkeyDB • Apache Kafka • Zipkin • Docker • Kubernetes • Azure",
+      "tech": "Java 17 • Spring Boot • Kafka • Kubernetes • Docker • PostgreSQL • MongoDB • Azure • Spring Cloud • Spring Security • ValkeyDB • Zipkin",
       "description": "Plataforma digital para jugar al Prode entre amigos con predicciones, puntajes y rankings.",
       "image": "./banner Prodemaster.jpg",
-      "link": "#",
+      "link": "https://github.com/ProdeMaster",
       "category": "Web App / Deportes / Social",
       "longDescription": "Prodemaster digitaliza el clásico juego de Prode en una plataforma web moderna que permite crear grupos de amigos, realizar predicciones de fútbol, calcular puntajes y generar rankings amistosos. Integra información de partidos en tiempo real mediante Sportmonks u otras APIs, con un sistema de puntuación flexible que se adapta a reglas personalizadas. La seguridad y confiabilidad se garantizan con Spring Security y bases de datos optimizadas: PostgreSQL para datos estructurados, MongoDB para históricos y ValkeyDB para caché. Además, utiliza Kafka para eventos asíncronos, Zipkin para trazabilidad y despliegue en contenedores con Docker o Kubernetes, evaluando Microsoft Azure como entorno en la nube."
     },
     {
-      "title": "AB-Rosana",
+      "title": "WallaClone",
       "year": "2024",
       "role": "Full Stack Developer",
-      "tech": "TypeScript • Next.js • JWT • Prisma • PostgreSQL • TailwindCSS • Dropbox • Resend • Vercel",
-      "description": "Blog de psicología con publicaciones, sistema de suscripción y contacto directo con la profesional.",
-      "image": "./banner ab-rosana.jpg",
-      "link": "https://www.ab-rosana.com/",
-      "category": "Web App / Blog / Psicología",
-      "longDescription": "AB-Rosana es un blog de psicología diseñado para compartir experiencias y herramientas de psicoanálisis, al tiempo que ofrece un canal directo para contratar sesiones 1 a 1 con la licenciada. Incluye un sistema de suscripción por email que notifica automáticamente nuevas publicaciones, una zona privada para super-admin con plantillas prediseñadas para publicar contenido fácilmente, y un almacenamiento seguro de imágenes en la nube. Con un diseño limpio y minimalista, la web facilita la navegación, integra un apartado de contacto exclusivo y utiliza tecnologías modernas como Next.js, TypeScript y PostgreSQL, desplegándose en Vercel con servicios de apoyo como Dropbox y Resend."
-    },
-    {
-      "title": "WallaClone",
-      "year": "2023",
-      "role": "Full Stack Developer",
-      "tech": "JavaScript • React • Redux • TypeScript • Node.js • Nodemailer • JWT • MongoDB • RabbitMQ • TailwindCSS • AWS EC2 • AWS S3",
+      "tech": "TypeScript • React • Node.js • RabbitMQ • AWS EC2 • MongoDB • TailwindCSS • Redux • AWS S3 • JWT • Nodemailer",
       "description": "Clon de Wallapop con funcionalidades de compra, venta y gestión de artículos desarrollada por un equipo full stack.",
       "image": "./banner WallaClone.jpg",
       "link": "https://wallaclone-frontend.vercel.app/",
@@ -34,24 +23,17 @@
       "longDescription": "WallaClone es un proyecto final de bootcamp que replica las funciones principales de Wallapop, ofreciendo una plataforma de compra y venta de artículos con un diseño propio. Incluye registro y autenticación de usuarios, sistema CRUD completo para publicaciones, búsqueda y filtrado por categoría o nombre, y confirmación por correo electrónico con Nodemailer. Utiliza MongoDB para el almacenamiento de datos, AWS S3 para imágenes y RabbitMQ como sistema de colas para tareas asíncronas. Con un diseño minimalista desarrollado en React y TailwindCSS, la aplicación está desplegada en una instancia EC2 de AWS, integrando Node.js y JWT para una experiencia segura y eficiente."
     }
   ],
-  "personal": [
+  "freelance": [
     {
-      "title": "Portfolio Website",
-      "tech": "React • TypeScript • Vite",
-      "description": "Personal portfolio website with modern design",
-      "image": "https://images.unsplash.com/photo-1467232004584-a241de8b6ef3?w=300&h=200&fit=crop",
-      "link": "#",
-      "category": "frontend"
-    }
-  ],
-  "openSource": [
-    {
-      "title": "React Component Library",
-      "tech": "React • TypeScript • Storybook",
-      "description": "Reusable component library for React applications",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=200&fit=crop",
-      "link": "#",
-      "category": "frontend"
+      "title": "AB-Rosana",
+      "year": "2024",
+      "role": "Full Stack Developer",
+      "tech": "TypeScript • Next.js • Prisma • PostgreSQL • TailwindCSS • Vercel • Resend • Dropbox • JWT",
+      "description": "Blog de psicología con publicaciones, sistema de suscripción y contacto directo con la profesional.",
+      "image": "./banner ab-rosana.jpg",
+      "link": "https://www.ab-rosana.com/",
+      "category": "Web App / Blog / Psicología",
+      "longDescription": "AB-Rosana es un blog de psicología diseñado para compartir experiencias y herramientas de psicoanálisis, al tiempo que ofrece un canal directo para contratar sesiones 1 a 1 con la licenciada. Incluye un sistema de suscripción por email que notifica automáticamente nuevas publicaciones, una zona privada para super-admin con plantillas prediseñadas para publicar contenido fácilmente, y un almacenamiento seguro de imágenes en la nube. Con un diseño limpio y minimalista, la web facilita la navegación, integra un apartado de contacto exclusivo y utiliza tecnologías modernas como Next.js, TypeScript y PostgreSQL, desplegándose en Vercel con servicios de apoyo como Dropbox y Resend."
     }
   ]
 }
