@@ -6,13 +6,19 @@ import SpringIcon from "../assets/spring-svgrepo.svg";
 import NodeIcon from "../assets/node-svgrepo.svg";
 import DockerIcon from "../assets/docker-svgrepo.svg";
 import PostgresIcon from "../assets/pgsql-svgrepo.svg";
+import TypescriptIcon from "../assets/typeScript-svgrepo.svg";
+import ReactIcon from "../assets/react-svgrepo.svg"
+import AwsIcon from "../assets/aws-svgrepo-com.svg"
 
 const TECH_STACK = [
   { icon: JavaIcon, name: "Java", alt: "Java" },
   { icon: SpringIcon, name: "Spring Boot", alt: "Spring Boot" },
+  { icon: TypescriptIcon, name: "TypeScript", alt: "TypeScript" },
+  { icon: ReactIcon, name: "React", alt: "React" },
   { icon: NodeIcon, name: "Node.js", alt: "Node.js" },
-  { icon: PostgresIcon, name: "PostgreSQL", alt: "PostgreSQL" },
   { icon: DockerIcon, name: "Docker", alt: "Docker" },
+  { icon: AwsIcon, name: "AWS", alt: "AWS"},
+  { icon: PostgresIcon, name: "PostgreSQL", alt: "PostgreSQL" },
 ];
 
 const Hero = () => {
