@@ -23,6 +23,15 @@ const Project = () => {
       <h2 className="section-title">Proyectos</h2>
 
       <div className="projects-group">
+        <h3 className="projects-group-title">Freelance</h3>
+        <div className="projects-grid">
+          {freelanceProjects.map((project: ProjectItem) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </div>
+      
+      <div className="projects-group">
         <h3 className="projects-group-title">Proyectos Personales</h3>
         <div className="projects-grid">
           {personalProjects.map((project: ProjectItem) => (
@@ -31,14 +40,6 @@ const Project = () => {
         </div>
       </div>
 
-      <div className="projects-group">
-        <h3 className="projects-group-title">Freelance</h3>
-        <div className="projects-grid">
-          {freelanceProjects.map((project: ProjectItem) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 };

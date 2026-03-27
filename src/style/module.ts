@@ -211,13 +211,6 @@ export const styles = `
     flex-wrap: wrap;
   }
   
-  @media (max-width: 480px) {
-    .cta-secondary {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-  
   .profile-card {
     position: relative;
     width: 100%;
@@ -1150,6 +1143,8 @@ export const styles = `
     
     .cta-btn {
       padding: 8px 12px;
+      width: 100%;
+      justify-content: center;
     }
     
     .profile-card {
