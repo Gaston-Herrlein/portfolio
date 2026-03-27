@@ -17,11 +17,11 @@ const Popover = ({ trigger, content }: PopoverProps) => {
     const el = anchorRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    const padding = 8;
+    const padding = 6;
     const maxWidth = 360;
     const viewportWidth = window.innerWidth;
     const left = Math.min(
-      Math.max(rect.left, 8),
+      Math.max(rect.right - padding, 8),
       Math.max(8, viewportWidth - maxWidth - 8)
     );
     const top = rect.bottom + padding;
