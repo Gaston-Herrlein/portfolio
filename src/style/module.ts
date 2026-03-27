@@ -433,15 +433,15 @@ export const styles = `
   }
 
   .skill-category-grid {
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
     width: 100%;
   }
     
   .skill-chip {
     position: relative;
-    padding: clamp(10px, 2vw, 14px) clamp(14px, 2.5vw, 18px);
+    padding: clamp(10px, 2vw, 14px) clamp(14px, 2.5vw, 27px);
     border-radius: var(--radius-md);
     background: linear-gradient(135deg, rgba(15,98,254,0.06) 0%, rgba(15,98,254,0.03) 100%);
     border: 1px solid rgba(15,98,254,0.12);
@@ -452,7 +452,7 @@ export const styles = `
     align-items: center;
     justify-content: center;
     font-size: clamp(13px, 1.6vw, 15px);
-    font-weight: 500;
+    font-weight: 600;
     color: #0f62fe;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
