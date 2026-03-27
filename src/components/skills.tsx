@@ -1,5 +1,7 @@
 import skillsData from "../const/skill.json";
 
+import SkillChip from "./skillChip";
+
 const Skills = () => {
   return (
     <section className="section" id="skills">
@@ -8,11 +10,9 @@ const Skills = () => {
         {Object.entries(skillsData).map(([category, skillList]) => (
           <div key={category} className="skill-category">
             <h3 className="skill-category-title">{category}</h3>
-            <div className="skills-grid">
+            <div className="skill-category-grid">
               {skillList.map((skill) => (
-                <div key={skill} className="skill-chip">
-                  {skill}
-                </div>
+                <SkillChip key={skill} skill={skill} />
               ))}
             </div>
           </div>
