@@ -5,8 +5,8 @@ const Blogs = () => {
     <section className="section" id="blog">
       <h2 className="section-title">Latest Posts</h2>
       <div className="blog-list">
-        {blogPost.map((post, index) => (
-          <div key={index} className="blog-item">
+        {blogPost.map((post) => (
+          <div key={post.title} className="blog-item">
             <div className="blog-content">
               <h3 className="blog-title">{post.title}</h3>
               <p className="blog-excerpt">{post.excerpt}</p>

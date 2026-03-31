@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a personal portfolio website built with **React 19**, **TypeScript**, and **Vite**. The project uses CSS modules for styling (via a single stylesheet in `src/style/module.ts`) and `lucide-react` for icons. Data is stored in JSON files in `src/const/`.
+Personal portfolio website built with **React 19**, **TypeScript**, and **Vite**. Uses CSS modules via a single stylesheet in `src/style/module.ts`, `lucide-react` for icons, and JSON files in `src/const/` for data.
 
 ## Build, Lint, and Test Commands
 
@@ -10,14 +10,17 @@ This is a personal portfolio website built with **React 19**, **TypeScript**, an
 # Development server with hot reload
 pnpm run dev
 
-# Production build (type-check + bundle)
+# Production build (runs type-check + bundle via tsc -b && vite build)
 pnpm run build
 
-# Type-check only
-pnpm run tsc
+# Type-check only (no bundle)
+pnpm run build
 
-# Lint all files (uses ESLint with TypeScript and React plugins)
+# Lint all files
 pnpm run lint
+
+# Lint a specific file
+pnpm run lint -- src/App.tsx
 
 # Preview production build locally
 pnpm run preview
@@ -26,110 +29,114 @@ pnpm run preview
 pnpm run predeploy && pnpm run deploy
 ```
 
-**Note:** There are currently no test files or test commands configured.
+**Note:** No test files or test commands configured.
+
+## TypeScript Configuration
+
+- Strict mode enabled (`strict: true`)
+- Target: ES2022
+- `noUnusedLocals: true` - fail on unused local variables
+- `noUnusedParameters: true` - fail on unused function parameters
+- `erasableSyntaxOnly: true` - only allow syntax that can be erased during transpilation
+- `verbatimModuleSyntax: true` - imports/exports must use `type` keyword for type-only
 
 ## Code Style Guidelines
 
 ### Imports and Module Organization
 
 - Use **named exports** for all components (e.g., `export default Hero;`)
-- Import external libraries first, then local components
+- Import order: external libraries → `lucide-react` → internal imports
 - Group imports with blank lines between groups:
   ```typescript
   import { useState } from "react";
-  import { Mail } from "lucide-react";
+  import { Mail, Github } from "lucide-react";
 
   import { styles } from "../style/module";
   import Header from "./components/header";
   ```
-- Use the `.tsx` extension for React components and `.ts` for utility files
-- Keep component files small (under ~200 lines when possible)
+- Use `.tsx` for React components, `.ts` for utilities
+- Keep components under ~200 lines when possible
 
 ### TypeScript Conventions
 
-- Enable **strict mode** (already configured)
-- Define explicit types for component props:
-  ```typescript
-  type Props = {
-    activeSection: string;
-    onClick?: () => void;
-  };
-  ```
-- Use `null` instead of `undefined` for optional values where appropriate
-- Avoid `any` type; use `unknown` or specific types instead
-- Use `noUnusedLocals` and `noUnusedParameters` (enabled in tsconfig)
+- Define explicit `type Props = { ... }` for component props
+- Use `null` instead of `undefined` for optional values
+- Avoid `any`; use `unknown` or specific types
+- Use `Readonly<T>` for immutable data
+- Prefer interfaces for object shapes, types for unions/primitives
 
 ### Naming Conventions
 
-- **Components**: PascalCase (e.g., `Hero`, `NavBar`, `Project`)
-- **Files**: camelCase for non-components, kebab-case for constants
-- **Variables and functions**: camelCase
-- **Constants**: UPPER_SNAKE_CASE for global constants, camelCase otherwise
-- **Types and interfaces**: PascalCase with descriptive names
-- **CSS classes**: kebab-case (e.g., `hero`, `project-card`, `cta-btn`)
+| Element | Convention | Example |
+|---------|------------|---------|
+| Components | PascalCase | `Hero`, `NavBar`, `Project` |
+| Files (components) | PascalCase | `Hero.tsx`, `NavBar.tsx` |
+| Files (utils) | camelCase | `helpers.ts`, `utils.ts` |
+| Constants | UPPER_SNAKE_CASE | `MAX_ITEMS`, `API_URL` |
+| Types/Interfaces | PascalCase | `ProjectData`, `SkillProps` |
+| CSS classes | kebab-case | `hero`, `project-card`, `cta-btn` |
 
 ### React Patterns
 
-- Use **functional components** with hooks (no class components)
-- Destructure props in the function signature:
+- Functional components only (no class components)
+- Destructure props in function signature:
   ```typescript
-  const Hero = ({ title, subtitle }: HeroProps) => { ... }
+  type Props = { title: string; subtitle?: string };
+  const Hero = ({ title, subtitle }: Props) => { ... }
   ```
-- Prefer `useState` for local state, `useReducer` for complex state
-- Use `useEffect` with proper cleanup (remove event listeners):
+- Use `useState` for local state, `useReducer` if complex
+- Always clean up side effects in `useEffect`:
   ```typescript
   useEffect(() => {
     const handler = () => { ... };
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
-  }, [dependencies]);
+  }, []);
   ```
-- Use `createPortal` for modals and tooltips (see `project.tsx`)
-- Add `loading="lazy"` to images
+- Use `createPortal` for modals/tooltips (see `project.tsx`)
+- Add `loading="lazy"` to all `<img>` tags
+- Memoize callbacks passed to child components when needed
 
 ### Styling
 
-- All CSS is in `src/style/module.ts` as a template string
-- Use **CSS classes** for styling, avoid inline styles except for:
+- All CSS in `src/style/module.ts` as template literal
+- Use CSS classes, avoid inline styles except for:
   - Dynamic values from props/state
-  - One-off positioning for portals
-- Follow existing CSS patterns:
-  - Flexbox for layout
-  - CSS Grid for complex layouts
-  - `clamp()` for responsive typography
-  - CSS custom properties for colors and spacing
-- Use the color palette: primary `#0f62fe`, text `#091024`, muted `#64748b`
+  - Portal positioning
+- CSS patterns: Flexbox (layout), CSS Grid (complex), `clamp()` (responsive typography)
+- CSS custom properties for colors/spacing
+- Color palette: primary `#0f62fe`, text `#091024`, muted `#64748b`
 
 ### Error Handling
 
-- Use optional chaining and nullish coalescing:
+- Optional chaining and nullish coalescing:
   ```typescript
   const element = document.getElementById(section);
   if (element) { ... }
   const value = obj?.property ?? defaultValue;
   ```
-- Avoid try/catch in render paths; handle errors at component boundaries
+- Handle errors at component boundaries, not in render paths
 - Use TypeScript to make invalid states unrepresentable
 
-### File Structure
+## File Structure
 
 ```
 src/
-  ├── components/     # React components (navBar, hero, project, etc.)
-  ├── const/          # JSON data files (projects.json, skills.json)
-  ├── style/          # Global CSS styles
-  ├── App.tsx         # Main app component
-  └── main.tsx        # Entry point
-public/               # Static assets (images)
+├── components/     # React components (header, hero, project, etc.)
+├── const/          # JSON data (projects.json, skills.json)
+├── context/        # React context providers (theme.tsx)
+├── style/          # CSS module.ts
+├── App.tsx         # Root component
+└── main.tsx        # Entry point
+public/            # Static assets (images)
 ```
 
-### Additional Guidelines
+## Additional Guidelines
 
-- **No comments** in code (per project convention)
-- Use **Spanish** for visible text (headings, labels, content)
-- Use **English** for code identifiers and comments (if any)
+- **No comments** in code
+- Visible text in **Spanish** (headings, labels, content)
+- Code identifiers and comments in **English**
 - Add `aria-*` attributes for accessibility
-- Use `role` attributes for semantic elements (e.g., `role="tooltip"`)
-- Follow the existing component patterns in `src/components/`
-- Keep components focused: one responsibility per component
-- Use `lucide-react` for icons (import by name: `import { Mail } from "lucide-react";`)
+- Use `role` attributes for semantic elements
+- Use `lucide-react` icons: `import { Mail } from "lucide-react";`
+- One responsibility per component

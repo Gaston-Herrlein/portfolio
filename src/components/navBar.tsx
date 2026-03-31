@@ -7,12 +7,12 @@ const NavBar = ({
 }) => {
   return (
     <nav className="site-nav">
-      <a
-        href="#about"
-        className={`nav-link ${activeSection === "about" ? "active" : ""}`}
+            <a
+        href="#projects"
+        className={`nav-link ${activeSection === "projects" ? "active" : ""}`}
         onClick={onLinkClick}
       >
-        Sobre mí
+        Projectos
       </a>
       <a
         href="#skills"
@@ -22,16 +22,15 @@ const NavBar = ({
         Habilidades
       </a>
       <a
-        href="#projects"
-        className={`nav-link ${activeSection === "projects" ? "active" : ""}`}
+        href="#about"
+        className={`nav-link ${activeSection === "about" ? "active" : ""}`}
         onClick={onLinkClick}
       >
-        Projectos
+        Sobre mí
       </a>
       <a
         href="#blog"
-        className={`nav-link ${activeSection === "blog" ? "active" : ""}`}
-        style={{ display: "none" }}
+        className={`nav-link hidden ${activeSection === "blog" ? "active" : ""}`}
         onClick={onLinkClick}
       >
         Blog
