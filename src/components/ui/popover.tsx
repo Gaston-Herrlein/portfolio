@@ -43,7 +43,7 @@ const Popover = ({ trigger, content }: PopoverProps) => {
 
   return (
     <div
-      style={{ position: "relative", display: "inline-block" }}
+      style={{ position: "relative", display: "inline-flex" }}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
