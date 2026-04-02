@@ -852,9 +852,36 @@ export const styles = `
     margin: 0 auto;
   }
   
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
   .footer-text {
     font-size: clamp(12px, 1.8vw, 14px);
     color: #64748b;
+  }
+  
+  .footer-legal {
+    font-size: clamp(11px, 1.5vw, 12px);
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+  
+  .footer-legal a {
+    color: #0f62fe;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  .footer-legal a:hover {
+    color: #0a4acc;
+  }
+  
+  /* Hide reCAPTCHA badge */
+  .grecaptcha-badge {
+    display: none !important;
   }
   
   .socials {
