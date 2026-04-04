@@ -20,8 +20,15 @@ const headers = {
 const parseBody = (event: any): ContactPayload => {
   // Lambda URL: body es string JSON
   // API Gateway: body es string JSON
-  let body: string = event.body || "{}";
   
+  console.log("===========parseBody============")
+  console.log("Event: ");
+  console.log(event);
+  console.log("Event body: ");
+  console.log(event.body);
+  console.log("===========parseBody============")
+
+  let body: string = event.body || "{}";
   if (typeof body === "string") {
     try {
       return JSON.parse(body);
