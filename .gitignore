@@ -32,4 +32,6 @@ dist-ssr
 *.sw?
 
 .agents
-lambda
+# Lambda transpiled output (ignore only root lambda/ folder, not api/lambda/)
+/lambda/
+/lambda/*.mjs
