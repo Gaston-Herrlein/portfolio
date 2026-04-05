@@ -49,7 +49,7 @@ export const handler = async (event: any): Promise<{
   // Handle OPTIONS preflight
   const httpMethod = event.httpMethod || event.requestContext?.http?.method || "POST";
   
-  if (httpMethod === "OPTIONS") {
+  if (httpMethod === "OPTIONS" || httpMethod === "HEAD") {
     return { statusCode: 200, headers, body: "" };
   }
 
