@@ -35,3 +35,6 @@ dist-ssr
 # Lambda transpiled output (ignore only root lambda/ folder, not api/lambda/)
 /lambda/
 /lambda/*.mjs
+
+# Amplify
+.amplify/
