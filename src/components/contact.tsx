@@ -1,6 +1,18 @@
-import { Mail } from "lucide-react";
+import { useState } from "react";
+import { Mail, Check } from "lucide-react";
+
+const EMAIL = "herrleingaston@gmail.com";
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(EMAIL).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <section className="section contact" id="contact">
       <div className="contact-content">
@@ -10,13 +22,22 @@ const Contact = () => {
           proyectos emocionantes.
         </p>
         <div className="contact-actions">
-          <a
+          <button
             className="cta-btn contact-email-btn"
-            href="mailto:g.herrlein@example.com"
+            onClick={handleCopyEmail}
           >
-            <Mail size={20} />
-            Enviar email
-          </a>
+            {copied ? (
+              <>
+                <Check size={20} />
+                ¡Copiado!
+              </>
+            ) : (
+              <>
+                <Mail size={20} />
+                Enviar email
+              </>
+            )}
+          </button>
         </div>
       </div>
     </section>
